@@ -168,9 +168,9 @@ input {
     content: "\2713";
     width: 100%;
     height: 100%;
-    top: 8px;
-    left: 13px;
-    font-size: 12px;
+    top: 0px;
+    left: 7px;
+    font-size: 18px;
 }
 
 .group-inputs {

@@ -1,6 +1,9 @@
 <?php
 
+use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\Route;
+
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +22,6 @@ Route::get('/', function () {
 Route::get('/reg', function () {
     return view('reg');
 });
+
+Route::post("signup",[\App\Http\Controllers\RegistrationController::class, "signUp"])->name("signup");
+

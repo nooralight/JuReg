@@ -22,7 +22,8 @@
 
 
 
-    <form action="#" class="form" id="forms" onsubmit="event.preventDefault()">
+    <form action="{{route('signup')}}" method="post" class="form" id="forms" onsubmit="event.preventDefault()">
+        @csrf
         <div class="progressbar">
             <div class="progress" id="progress"></div>
             <div class="progress-step progress-step-active" data-title="Personal"></div>
@@ -35,11 +36,11 @@
             <!-- Name Part -->
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Full name</label>
-                <input type="text" name="usernameEn" id="fname" placeholder="Full name in English" />
+                <input class="form-control" type="text" name="fname" id="f_name" placeholder="Full name in English" />
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Full name(Bangla)</label>
-                <input type="text" name="usernameBn" id="fname" placeholder="Full name in Bangla" />
+                <input type="text" name="f_nameB" id="fname" placeholder="Full name in Bangla" />
             </div>
             <!-- Gender -->
             <div class="mb-3">
@@ -86,7 +87,7 @@
             <!-- Present Adress -->
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Present Adress</label>
-                <input type="text" name="p_adress" placeholder="Present Adress" />
+                <input type="text" name="present_adress" placeholder="Present Adress" />
             </div>
 
             <!-- Mobile Number -->
@@ -99,13 +100,13 @@
             <!-- Email Adress -->
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                <input type="email" class="form-control" name="email" id="exampleFormControlInput1" placeholder="name@example.com">
             </div>
 
             <!-- Facebook Id -->
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Facebook ID</label>
-                <input type="text" name="mobile" placeholder="Facebook Id link" />
+                <input type="text" name="fb_link" placeholder="Facebook Id link" />
             </div>
             <div class=""> <a href="#" class="btn btn-next width-50 ml-auto">Next</a> </div>
         </div>
@@ -149,7 +150,7 @@
             <!--Hall of Residence -->
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Hall of Residence</label>
-                <select class="form-select" id="hall_res" name="hall_res">
+                <select class="form-select" id="hall_res" name="hor">
                     <option value="n">Bithi e Noor Hall</option>
                     <option value="b">Alo e Jewel Hall</option>
                 </select>
@@ -158,7 +159,7 @@
             <!--Academic Session -->
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Academic Session</label>
-                <select class="form-select" id="ac_session" name="acc_session">
+                <select class="form-select" id="ac_session" name="ac_session">
                     <option value="1">2000</option>
                     <option value="2">2001</option>
                     <option value="3">2002</option>
@@ -200,10 +201,35 @@
                 <label for="exampleFormControlInput1" class="form-label">Organization Name</label>
                 <input type="text" name="organization" id="organization" placeholder="Organization Name" />
             </div>
-            <!-- Designation -->
+            <!-- Adress of Organization -->
             <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Designation</label>
-                <input type="text" name="designation" id="designation" placeholder="Designation" />
+                <label for="exampleFormControlInput1" class="form-label">Adress of Organization</label>
+                <input type="text" name="adress_org" id="adress_org" placeholder="Adress of Organization" />
+            </div>
+
+            <div class="btns-group"> <a href="#" class="btn btn-prev">Previous</a> <a href="#"
+                    class="btn btn-next">Next</a> </div>
+        </div>
+
+
+        <!--Login Page -->
+        <div class="step-forms">
+
+            <!-- username -->
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Username</label>
+                <input type="text" name="username" id="username" placeholder="Username" />
+            </div>
+
+            <!-- password -->
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Password</label>
+                <input type="password" name="password" id="password" placeholder="Password" />
+            </div>
+            <!-- repeat password -->
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Repeat Password</label>
+                <input type="password" name="r_password" id="r_password" placeholder="Repeat Password" />
             </div>
 
             <div class="btns-group"> <a href="#" class="btn btn-prev">Previous</a> <input type="submit"
